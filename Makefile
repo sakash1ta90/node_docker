@@ -30,4 +30,3 @@ bash: ## bashコマンドの実行
 ci: ## CI用コマンド
 	@docker-compose build
 	@docker-compose up -d
-	@docker-compose exec -T app npm i
