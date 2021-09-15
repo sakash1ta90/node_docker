@@ -1,0 +1,16 @@
+name: test up
+on: 
+  push:
+  schedule:
+    - cron: "0 10 1 * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: make build && make up
+      - name: Do Test
+        run: sleep 1;curl -s --retry 10 --retry-connrefused http://127.0.0.1:3000/
+

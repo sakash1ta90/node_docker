@@ -4,7 +4,6 @@ help: ## ヘルプを表示する
 setenv: .env.example ## .envファイルをexampleから生成する
 	@cp .env.example .env
 up: docker-compose.yml ## コンテナを立ち上げる
-	@make setenv
 	@docker compose up -d
 build: docker-compose.yml ## コンテナをビルドする
 	@make setenv
