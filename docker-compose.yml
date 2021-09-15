@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  app:
+    image: node:slim
+    container_name: app
+    tty: true
+    volumes:
+      - ./src:/src
+    working_dir: "/src"
+    ports:
+      - ${WEB_PORT:-3000}:3000
+    command: npm start
+    environment:
+      - PORT=${WEB_PORT:-3000}

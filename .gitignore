@@ -1,0 +1,3 @@
+.env
+!.gitkeep
+src/node_modules/*
