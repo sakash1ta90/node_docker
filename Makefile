@@ -27,3 +27,7 @@ ps: ## psコマンドの実行
 .PHONY: bash
 bash: ## bashコマンドの実行
 	@docker compose exec app bash -l
+ci: ## CI用コマンド
+	@docker-compose build
+	@docker-compose up -d
+	@docker-compose exec -T app npm i

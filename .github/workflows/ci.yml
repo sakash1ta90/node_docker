@@ -10,9 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker-compose build && docker-compose up -d
-      - name: Build npm
-        run: docker-compose exec -T app bash -c "npm i"
+        run: make ci
       - name: Do Test
         run: sleep 1;curl -s --retry 10 --retry-connrefused http://127.0.0.1:3000/
 
